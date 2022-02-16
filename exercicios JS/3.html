@@ -12,6 +12,78 @@
 			h1{text-align:center;color:#FFC200}
 			span{cursor:pointer;}
 		</style>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				const noticia = document.querySelector('#not');
+				const parceiro = document.querySelector('#par');
+
+				noticia.style.display = 'none';
+				parceiro.style.display = 'none';
+
+
+				const aMais = document.querySelector('#aumentarFonte');
+				const aMedio = document.querySelector('#normalFonte');
+				const aMenos = document.querySelector('#diminuirFonte');
+				const contrasteOn = document.querySelector('#altoContrasteOn');
+				const contrasteOff = document.querySelector('#altoContrasteOff');
+
+				const tudo = document.querySelector('body');
+				const link = document.querySelector('a');
+
+				aMais.addEventListener('click', aumentarFonte);
+				aMedio.addEventListener('click', normalFonte);
+				aMenos.addEventListener('click', diminuirFonte);
+
+				contrasteOn.addEventListener('click', ligaContraste);
+				contrasteOff.addEventListener('click', desligaContraste);
+
+
+				function aumentarFonte(){
+					tudo.style.fontSize = '20px';
+				}
+				function normalFonte(){
+					tudo.style.fontSize = '16px';
+				}
+				function diminuirFonte(){
+					tudo.style.fontSize = '10px';
+				}
+				function ligaContraste(){
+					tudo.style.backgroundColor = "black";
+					tudo.style.color = "orange";
+					link.style.color = "orange";
+						
+				}
+				function desligaContraste(){
+					tudo.style.backgroundColor = "#D90000";
+					tudo.style.color = "#FFFFFF";
+					link.style.color = "#FFFFFF";
+				}
+
+				document.querySelector('#link').onmouseover = function(){
+					link.style.textDecoration="none";
+				}
+				document.querySelector('#link').onmouseout = function(){
+					link.style.textDecoration="underline";
+				}
+				
+				document.querySelector('#noticias').onclick = function(){
+					if((noticia.style.display === 'none')){
+						noticia.style.display = 'block';
+					}else{
+						noticia.style.display = 'none';
+					};
+				}
+		
+				document.querySelector('#parceiros').onclick = function(){
+					if((parceiro.style.display === 'none')){
+						parceiro.style.display = 'block';
+					}else{
+						parceiro.style.display = 'none';
+					};
+				}
+		
+			});
+		</script>
 
 	
 	</head>
