@@ -31,12 +31,40 @@
 					var numero = document.getElementById('inputExercicio3').value;
 					var vetor = [];
 
-					for(i = numero; i >= 1; i--){
+					for(i = 0; i <= numero + 1; i++){
 						vetor[i] = numero;
 						numero--;
 					}
-					
+
 					para3.textContent = vetor;	
+				}
+
+				const para4 = document.querySelector('#paragrafoExercicio4');
+				
+				document.getElementById("exercicio4btn1").onclick = function() {corLetraAzul()};
+				document.getElementById("exercicio4btn2").onclick = function() {corLetraVermelho()};
+				document.getElementById("exercicio4btn3").onclick = function() {corFundoPreto()};
+				document.getElementById("exercicio4btn4").onclick = function() {corFundoCinza()};
+				document.getElementById("exercicio4btn5").onclick = function() {tamanhoFonte20()};
+
+				function corLetraAzul(){
+					para4.style.color = 'blue';
+				}
+
+				function corLetraVermelho(){
+					para4.style.color = 'red';
+				}
+
+				function corFundoPreto(){
+					para4.style.backgroundColor = 'black';
+				}
+
+				function corFundoCinza(){
+					para4.style.backgroundColor = 'grey';
+				}
+
+				function tamanhoFonte20(){
+					para4.style.fontSize = '20px';
 				}
 				
 			});
