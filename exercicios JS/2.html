@@ -2,17 +2,54 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<script>
+		document.addEventListener("DOMContentLoaded", function(){
+			const nomeGoleiro = document.querySelector('#tdGoleiro');
+			const nomeFixo = document.querySelector('#tdFixo');
+			const nomeAE = document.querySelector('#tdAlaEsq');
+			const nomeAD = document.querySelector('#tdAlaDir');
+			const nomePivo = document.querySelector('#tdPivo');
+				
+			document.getElementById("btnGoleiro").onclick = function() {posicaoGoleiro()};
+			document.getElementById("btnFixo").onclick = function() {posicaoFixo()};
+			document.getElementById("btnAlaEsq").onclick = function() {posicaoAlaEsq()};
+			document.getElementById("btnAlaDir").onclick = function() {posicaoAlaDir()};
+			document.getElementById("btnPivo").onclick = function() {posicaoPivo()};
+
+			function posicaoGoleiro(){
+				var jogador = document.getElementById('texto').value;
+				nomeGoleiro.textContent = jogador;
+			}
+			function posicaoFixo(){
+				var jogador = document.getElementById('texto').value;
+				nomeFixo.textContent = jogador;
+			}
+			function posicaoAlaEsq(){
+				var jogador = document.getElementById('texto').value;
+				nomeAE.textContent = jogador;
+			}
+			function posicaoAlaDir(){
+				var jogador = document.getElementById('texto').value;
+				nomeAD.textContent = jogador;
+			}
+			function posicaoPivo(){
+				var jogador = document.getElementById('texto').value;
+				nomePivo.textContent = jogador;
+			}
+		});
+				
+		</script>
 	</head>
 	<body align="center">
 		<h1>Treinador de Futebol</h1>
 		Jogador:<input type="text" id="texto"/>
 		<br />
 		<br />
-		<button id="goleiro">Goleiro</button>
-		<button>Fixo</button>
-		<button>Ala Esquerda</button>
-		<button>Ala Direta</button>
-		<button>Pivô</button>
+		<button id="btnGoleiro">Goleiro</button>
+		<button id="btnFixo">Fixo</button>
+		<button id="btnAlaEsq">Ala Esquerda</button>
+		<button id="btnAlaDir">Ala Direta</button>
+		<button id="btnPivo">Pivô</button>
 		
 		<table border="1" style="width:800px; background-color:lightgreen; height:400px; text-align:center" align="center">
 			<thead>
@@ -23,12 +60,12 @@
 					<td colspan="4" id="tdGoleiro">Goleiro</td>
 				</tr>
 				<tr>
-					<td>Ala Esquerda</td>
-					<td>Fixo</td>
+					<td id="tdAlaEsq">Ala Esquerda</td>
+					<td id="tdFixo">Fixo</td>
 				</tr>
 				<tr>
-					<td>Pivô</td>
-					<td>Ala Direita</td>
+					<td id="tdPivo">Pivô</td>
+					<td id="tdAlaDir">Ala Direita</td>
 				</tr>
 			</tbody>
 		</table>
