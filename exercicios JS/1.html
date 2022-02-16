@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function(){
+				document.querySelector('#btnUm').onclick = function(){
+					alert("um")
+				}
+				document.querySelector('#btnDois').onmouseover = function(){
+					alert("dois")
+				}
+				document.querySelector('#btnTres').onmouseout = function(){
+					alert("Tres")
+				}
+				
+				const para2 = document.querySelector('#paragrafoExercicio2');
+				
+				document.getElementById("btnExercicio2").onclick = function() {atualizaNome()};
+
+				function atualizaNome(){
+					var nome = document.getElementById('inputExercicio2').value;
+					para2.textContent = 'Ola, ' + nome;
+				}
+
+				const para3 = document.querySelector('#paragrafoExercicio3');
+				
+				document.getElementById("btnExercicio3").onclick = function() {mostraAnte()};
+
+				function mostraAnte(){
+					var numero = document.getElementById('inputExercicio3').value;
+					var vetor = [];
+
+					for(i = numero; i >= 1; i--){
+						vetor[i] = numero;
+						numero--;
+					}
+					
+					para3.textContent = vetor;	
+				}
+				
+			});
+		</script>
+	</head>
+	<body>
+		<h2>Exercício 1</h2>
+		Crie eventos que exibam alerts confome a ação do botão: <br />
+		<button id="btnUm">Clique aqui</button>
+		<button id="btnDois" >Passe o mouse aqui</button>
+		<button id="btnTres">Passe e retire o mouse aqui</button>
+		<hr />		
+		
+		<h2>Exercício 2</h2>
+		Nome: <input type="text" id="inputExercicio2"/>
+		<button id="btnExercicio2">Enviar</button>
+		<p id="paragrafoExercicio2">Regra: Pegar o nome que o usuário e sobrescrever dentro desse paragráfo: Olá nomedigitado!</p>
+		<hr />
+		<h2>Exercício 3</h2>
+		Número: <input type="text" id="inputExercicio3"/>
+		<button id="btnExercicio3">Enviar</button>
+		<p id="paragrafoExercicio3">Regra: Pegar o número informado e apresentar seu antecessor até 1.</p>
+		<hr />
+		<h2>Exercício 4</h2>
+		<p id="paragrafoExercicio4">Regra: Altere o estilo desse paragráfo confome os botões</p>
+		<button id="exercicio4btn1">Troca cor da letra para Azul</button>
+		<button id="exercicio4btn2">Troca cor da letra para Vermelha</button>
+		<button id="exercicio4btn3">Troca cor do fundo para Preta</button>
+		<button id="exercicio4btn4">Troca cor do fundo para Cinza</button>
+		<button id="exercicio4btn5">Troca tamanho da fonte para 20</button>
+		
+
+	</body>
+</html>
